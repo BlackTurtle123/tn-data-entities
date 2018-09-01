@@ -1,12 +1,12 @@
 {
   "name": "@waves/data-entities",
-  "description": "Waves data types",
+  "description": "TN data types",
   "version": "1.5.3",
   "license": "Apache-2.0",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/wavesplatform/waves-data-entities.git"
+    "url": "https://github.com/BlackTurtle/waves-data-entities.git"
   },
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
