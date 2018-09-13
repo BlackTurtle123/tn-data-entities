@@ -1,4 +1,6 @@
 language: node_js
+before_script:
+- tsc
 install:
   - npm run travis
 deploy:
