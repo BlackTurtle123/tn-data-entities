@@ -19,6 +19,7 @@
     "patch": "npm version patch && npm publish --access=public && git push",
     "minor": "npm version minor && npm publish --access=public && git push",
     "major": "npm version major && npm publish --access=public && git push",
+    "travis": "npm version major",
     "test": "./node_modules/.bin/tsc -p ./test/tsconfig.json && ./node_modules/.bin/mocha $(find ./tmp -name '*.spec.js')"
   },
   "dependencies": {
