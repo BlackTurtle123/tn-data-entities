@@ -1,6 +1,6 @@
 language: node_js
 install:
-  - npm run major
+  - npm travis
 deploy:
   provider: npm
   email: info@blackturtle.eu
