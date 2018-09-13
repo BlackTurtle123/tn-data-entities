@@ -1,1 +1,1 @@
-# waves-data-entities
+# tn-data-entities
