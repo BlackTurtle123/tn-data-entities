@@ -1,12 +1,12 @@
 language: node_js
 before_script:
-  - npm install -g npm@latest
-  - npm install
-  - tsc
   - wget https://raw.githubusercontent.com/creationix/nvm/v0.31.0/nvm.sh -O ~/.nvm/nvm.sh
   - source ~/.nvm/nvm.sh
   - nvm install 10 # for Node v5
   - node --version
+  - npm install -g npm@latest
+  - npm install
+  - tsc
 install:
   - npm run travis
 deploy:
