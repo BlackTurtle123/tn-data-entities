@@ -1,5 +1,6 @@
 import { BigNumber } from '../libs/bignumber';
 import { config } from '../config';
+import { toBigNumber } from '../utils';
 
 export interface IAssetInfo {
     readonly ticker?: string;
@@ -12,10 +13,13 @@ export interface IAssetInfo {
     readonly sender: string;
     readonly quantity: BigNumber | string | number;
     readonly reissuable: boolean;
+    readonly hasScript?: boolean;
+    readonly minSponsoredFee?: BigNumber | string | number;
 }
 
 export interface IAssetJSON extends IAssetInfo {
     readonly quantity: BigNumber;
+    readonly minSponsoredFee?: BigNumber
 }
 
 export class Asset {
@@ -31,6 +35,8 @@ export class Asset {
     public readonly sender: string;
     public readonly quantity: BigNumber;
     public readonly reissuable: boolean;
+    public readonly hasScript: boolean;
+    public readonly minSponsoredFee: BigNumber | null;
 
     public readonly displayName: string;
 
@@ -38,10 +44,8 @@ export class Asset {
 
         assetObject = config.get('remapAsset')(assetObject);
 
-        this.quantity =
-            assetObject.quantity instanceof BigNumber
-                ? assetObject.quantity
-                : new BigNumber(assetObject.quantity);
+        this.quantity = toBigNumber(assetObject.quantity);
+        this.minSponsoredFee = toBigNumber(assetObject.minSponsoredFee);
 
         this.ticker = assetObject.ticker || null;
 
@@ -53,6 +57,7 @@ export class Asset {
         this.timestamp = assetObject.timestamp;
         this.sender = assetObject.sender;
         this.reissuable = assetObject.reissuable;
+        this.hasScript = assetObject.hasScript || false;
         this.displayName = assetObject.ticker || assetObject.name;
     }
 
@@ -68,6 +73,8 @@ export class Asset {
             sender: this.sender,
             quantity: this.quantity,
             reissuable: this.reissuable,
+            hasScript: this.hasScript,
+            minSponsoredFee: this.minSponsoredFee
         };
     }
 
