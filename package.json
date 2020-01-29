@@ -28,12 +28,12 @@
     "@turtlenetwork/bignumber": "0.0.2"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.5",
-    "@types/mocha": "^5.2.5",
-    "browserify": "^16.2.3",
+    "@types/chai": "^4.2.8",
+    "@types/mocha": "^5.2.7",
+    "browserify": "^16.5.0",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
-    "typescript": "^3.0.3",
-    "uglify-js": "^3.4.9"
+    "typescript": "^3.7.5",
+    "uglify-js": "^3.7.6"
   }
 }
