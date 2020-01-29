@@ -1,5 +1,5 @@
+import { BigNumber } from '@turtlenetwork/bignumber';
 import { Asset } from './Asset';
-import { BigNumber } from '@TurtleNetwork/bignumber';
 import { toBigNumber } from '../utils';
 
 
@@ -17,7 +17,6 @@ export class Money {
     private _tokens: BigNumber;
 
     // @todo refactor to accept full 'tokens' instead of 'coins'
-    // to hide precision arithmetic implementation
     constructor(coins: TMoneyInput, asset: Asset) {
         const divider = Money._getDivider(asset.precision);
         this.asset = asset;
@@ -116,7 +115,6 @@ export class Money {
         return this;
     }
 
-    // @todo coins refactor
     public cloneWithCoins(coins: TMoneyInput): Money {
         return new Money(new BigNumber(coins), this.asset);
     }
