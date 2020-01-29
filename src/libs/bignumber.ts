@@ -1,7 +1,7 @@
-import BigNumber from 'bignumber.js';
+import BigNumber from '@turtlenetwork/bignumber';
 
-BigNumber.config({
-    ROUNDING_MODE: BigNumber.ROUND_DOWN,
+BigNumber.config.set({
+    ROUNDING_MODE: BigNumber.ROUND_MODE.ROUND_DOWN,
 });
 
 export { BigNumber };
