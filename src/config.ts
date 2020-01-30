@@ -16,7 +16,7 @@ export namespace config {
     export function set<K extends keyof IConfig>(key: K, value?: IConfig[K]): void;
     export function set(key: Partial<IConfig>): void;
 
-    export function set<K extends keyof IConfig>(key: K | Partial<IConfig>, value?: IConfig[K]): void {
+    export function set<K extends keyof IConfig>(key: K, value?: IConfig[K]): void {
         if (typeof key === 'string') {
             storage[key] = value;
         } else {
