@@ -1,2 +1,2 @@
 # tn-data-entities
-[![Build Status](https://travis-ci.org/BlackTurtle123/tn-data-entities.svg?branch=master)](https://travis-ci.org/BlackTurtle123/tn-data-entities)
+[![Build Status](https://dev.azure.com/BlackTurtleBVBA/TurtleNetwork_OpenSource/_apis/build/status/TurtleNetwork.tn-data-entities?branchName=master)](https://dev.azure.com/BlackTurtleBVBA/TurtleNetwork_OpenSource/_build/latest?definitionId=15&branchName=master)

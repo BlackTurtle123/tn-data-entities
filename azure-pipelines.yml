@@ -25,6 +25,12 @@ steps:
     command: 'custom'
     customCommand: 'test'
 
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'test-results.xml'
+  condition: always()
+
 - task: Npm@1
   inputs:
     command: 'custom'
