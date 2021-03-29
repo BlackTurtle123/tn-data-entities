@@ -1,5 +1,5 @@
-import { BigNumber } from '@turtlenetwork/bignumber';
 import { Asset } from './Asset';
+import { BigNumber } from '@turtlenetwork/bignumber';
 import { toBigNumber } from '../utils';
 
 
@@ -68,12 +68,12 @@ export class Money {
 
     public times(money: Money): Money {
         this._matchAssets(money);
-        return new Money(this.getTokens().mul(money.getTokens()), this.asset);
+        return new Money(this.getCoins().mul(money.getCoins()), this.asset);
     }
 
     public div(money: Money): Money {
         this._matchAssets(money);
-        return new Money(this.getTokens().div(money.getTokens()), this.asset);
+        return new Money(this.getCoins().div(money.getCoins()), this.asset);
     }
 
     public eq(money: Money): boolean {
@@ -169,7 +169,8 @@ export class Money {
             const result = coins
                 .mul(exchangeRate)
                 .div(divider)
-                .toFixed(0, BigNumber.ROUND_MODE.ROUND_DOWN);
+                .roundTo(0, BigNumber.ROUND_MODE.ROUND_DOWN)
+                .toFixed();
             return new Money(new BigNumber(result), asset);
         }
     }

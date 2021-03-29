@@ -1,7 +1,7 @@
 {
   "name": "@turtlenetwork/data-entities",
   "description": "TN data types",
-  "version": "8.0.2",
+  "version": "8.0.3",
   "license": "Apache-2.0",
   "private": false,
   "repository": {
@@ -17,15 +17,13 @@
   "scripts": {
     "prepare": "tsc --declaration && npm run build && npm run uglify",
     "uglify": "node_modules/.bin/uglifyjs ./dist/data-entities.js -o ./dist/data-entities.min.js",
-    "build": "./node_modules/.bin/browserify ./dist/index.js --node -s data-entities -o ./dist/data-entities.js",
-    "patch": "npm version patch && npm publish --access=public && git push",
-    "minor": "npm version minor && npm publish --access=public && git push",
-    "major": "npm version major && npm publish  --access=public&& git push",
-    "test": "./node_modules/.bin/tsc -p ./test/tsconfig.json && npm run mocha",
-    "mocha": "./node_modules/.bin/mocha $(find ./tmp -name '*.spec.js') --reporter mocha-junit-reporter"
+    "build": "./node_modules/.bin/browserify ./dist/index.js --node -s data-entities -u @turtlenetwork/bignumber -o ./dist/data-entities.js",
+    "prepublish": "npm test",
+    "postversion": "npm publish && git push",
+    "test": "./node_modules/.bin/tsc -p ./test/tsconfig.json && ./node_modules/.bin/mocha $(find ./tmp -name '*.spec.js')"
   },
   "dependencies": {
-    "@turtlenetwork/bignumber": "0.0.2"
+    "@turtlenetwork/bignumber": "^1.1.1"
   },
   "devDependencies": {
     "@types/chai": "^4.2.8",

@@ -1,6 +1,5 @@
-import { BigNumber } from '../libs/bignumber';
+import { BigNumber } from '@turtlenetwork/bignumber';
 import { AssetPair } from './AssetPair';
-import { Asset } from './Asset';
 import { toBigNumber } from '../utils';
 
 export interface IOrderPriceJSON {
@@ -26,11 +25,11 @@ export class OrderPrice {
     }
 
     public getMatcherCoins(): BigNumber {
-        return this._matcherCoins.add(0);
+        return this._matcherCoins.clone();
     }
 
     public getTokens(): BigNumber {
-        return this._tokens.add(0);
+        return this._tokens.clone();
     }
 
     public toMatcherCoins(): string {
