@@ -24,15 +24,11 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'run prepare'
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    customCommand: 'prepare'
 
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'test'
+    customCommand: 'run test'
 
 - task: PublishTestResults@2
   inputs:
