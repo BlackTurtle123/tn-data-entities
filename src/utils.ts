@@ -1,4 +1,4 @@
-import { BigNumber } from '@turtlenetwork/bignumber';
+import { BigNumber } from '@waves/bignumber';
 
 
 export function toBigNumber(some: string | number | BigNumber): BigNumber {

@@ -1,4 +1,4 @@
-import { BigNumber } from '@turtlenetwork/bignumber';
+import { BigNumber } from '@waves/bignumber';
 import { AssetPair } from './AssetPair';
 import { toBigNumber } from '../utils';
 

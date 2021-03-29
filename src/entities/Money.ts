@@ -1,5 +1,5 @@
 import { Asset } from './Asset';
-import { BigNumber } from '@turtlenetwork/bignumber';
+import { BigNumber } from '@waves/bignumber';
 import { toBigNumber } from '../utils';
 
 
