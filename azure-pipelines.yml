@@ -23,6 +23,10 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
+    customCommand: 'run prepare'
+- task: Npm@1
+  inputs:
+    command: 'custom'
     customCommand: 'prepare'
 
 - task: Npm@1
